@@ -1,6 +1,0 @@
-Output matrix 
-
-Dimensions: 2x2
-
-7 9 
-7 6 

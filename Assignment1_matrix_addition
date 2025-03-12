@@ -1,0 +1,57 @@
+#include <iostream>
+
+using namespace std;
+
+const int SIZE = 4;
+
+// Function to input a matrix element-wise
+void inputMatrix(int matrix[SIZE][SIZE], const string& name) {
+    cout << "Enter elements of matrix " << name << " (" << SIZE << "x" << SIZE << "):" << endl;
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            cout << "Element [" << i+1 << "][" << j+1 << "]: ";
+            cin >> matrix[i][j];
+        }
+    }
+}
+
+// Function to print a matrix
+void printMatrix(const int matrix[SIZE][SIZE], const string& name) {
+    cout << "Matrix " << name << " is:" << endl;
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+
+// Function to add two matrices
+void addMatrices(const int A[SIZE][SIZE], const int B[SIZE][SIZE], int C[SIZE][SIZE]) {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            C[i][j] = A[i][j] + B[i][j];
+        }
+    }
+}
+
+int main() {
+    int A[SIZE][SIZE], B[SIZE][SIZE], C[SIZE][SIZE];
+
+    // Input matrices A and B
+    inputMatrix(A, "A");
+    inputMatrix(B, "B");
+
+    // Print matrices A and B
+    printMatrix(A, "A");
+    printMatrix(B, "B");
+
+    // Add matrices
+    addMatrices(A, B, C);
+
+    // Print result matrix C
+    printMatrix(C, "C (Sum of A and B)");
+
+    return 0;
+}
